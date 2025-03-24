@@ -1,0 +1,30 @@
+from city_function import preferred_city
+
+def main():
+    number_of_cities = int(input("Enter the number of cities: "))
+
+    distance = []
+    fuel = []
+
+    print("Enter the distances between the cities:")
+    for i in range(number_of_cities):
+        dist = int(input(f"Distance from city {i} to city {(i + 1) % number_of_cities}: "))
+        distance.append(dist)
+
+    print("Enter the amount of fuel available at each city:")
+    for i in range(number_of_cities):
+        available_fuel = int(input(f"Fuel available at city {i}: "))
+        fuel.append(available_fuel)
+
+    mpg = int(input("Enter how much miles per gallon the car has: "))
+
+    preferred_starting_city = preferred_city(distance, fuel, mpg)
+
+    if preferred_starting_city != -1:
+        print(f"The preferred starting city is: City {preferred_starting_city}")
+    else:
+        print("No valid starting city found.")
+
+
+if __name__ == "__main__":
+    main()
