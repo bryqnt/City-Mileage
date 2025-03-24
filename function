@@ -1,0 +1,23 @@
+def preferred_city(distance, fuel, mpg):
+    n = len(distance)
+
+    for start_city in range(n):
+        gas = 0
+        valid_start = True
+
+        for i in range(n):
+            current_city = (start_city + i) % n
+            distance_to_next_city = distance[current_city]
+            gas += fuel[current_city]
+            gas_needed = distance_to_next_city / mpg
+
+            if gas < gas_needed:
+                valid_start = False
+                break
+
+            gas -= gas_needed
+
+        if valid_start:
+            return start_city
+        
+    return -1
