@@ -21,6 +21,7 @@ It calculates the distance between the cities, the fuel availability at each cit
 ## Example runs
 
 $ python3 city_main.py
+```bash
 Enter the number of cities for the trip: 4
 Enter the distance between city 0 and city 1: 100
 Enter the distance between city 1 and city 2: 200
